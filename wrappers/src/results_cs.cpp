@@ -20,7 +20,7 @@ struct SortOrderWrapper {
 
     void add_sort(size_t col, bool ascendingCol)
     {
-      sort_order.columnIndices.push_back(col);
+      sort_order.column_indices.push_back(col);
       sort_order.ascending.push_back(ascendingCol);
     }
 };
@@ -123,7 +123,7 @@ REALM_EXPORT void sortorder_add_clause(SortOrderWrapper* sortorder_ptr, uint16_t
 }
 
 struct ManagedAsyncQueryCancellationContext {
-  AsyncQueryCancelationToken token;
+  NotificationToken token;
   void* managed_results;
   void(*callback)(void*);
 };

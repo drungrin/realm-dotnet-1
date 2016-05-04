@@ -75,6 +75,10 @@ namespace realm {
                 return "object";
             case PropertyTypeArray:
                 return "array";
+#if __GNUC__
+            default:
+                __builtin_unreachable();
+#endif
         }
     }
 }
